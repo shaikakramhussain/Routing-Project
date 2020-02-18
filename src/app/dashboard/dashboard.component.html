@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <a class="navbar-brand" href="#">Traffic Sudharo</a> -->
+  <h4 class="text-info">Traffic Sudharo</h4>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a class="nav-link" href="#">Home <span class="sr-only"></span></a> -->
+      </li>
+    </ul>
+    <span class="navbar-text">
+      <button class="btn btn-outline-danger" (click)="logOut()">Logout</button>
+    </span>
+  </div>
+</nav>
+<div class="jumbotron">
+  <div class="container-fluid">
+    <div class="row col-12 ">
+      <div class="col-3">
+        <img src="../../assets/c.png" width="100px" height="100px"><br>
+        <h2>{{paramsname}}</h2>
+        <h2>{{idname}}</h2>
+        <button class="btn btn-outline-danger" [routerLink]="['rewards']">Rewards</button>&nbsp;<br>
+        <button class="btn btn-outline-danger" [routerLink]="['violation']">Violation Type</button>&nbsp;
+      </div>
+      <div class="col-9">
+        <button class="btn btn-outline-info" [routerLink]="['pending']">pendingIssues</button>&nbsp;
+        <button class="btn btn-outline-primary" [routerLink]="['approved']">ApprovedIssues</button>&nbsp;
+        <button class="btn btn-outline-danger">RejectedIssues</button>&nbsp;
+        <button class="btn btn-outline-danger">Totalssues</button>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+   
+  </div>
+</div>
+<div class="container">
+  <h2>Basic Table</h2>
+  <p>List of Employees </p>
+  <hr>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>first_name</th>
+        <th>emai</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of result">
+        <td>{{data.id}}</td>
+        <td>{{data.first_name}}</td>
+        <td>{{data.emai}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
